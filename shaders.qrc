@@ -1,6 +1,10 @@
 <RCC>
     <qresource prefix="/">
-        <file>fragment.fsh</file>
-        <file>vertex.vsh</file>
+        <file>obj_fragment.fsh</file>
+        <file>obj_vertex.vsh</file>
+        <file>shadow_fragment.fsh</file>
+        <file>shadow_vertex.vsh</file>
+        <file>plane_fragment.fsh</file>
+        <file>plane_vertex.vsh</file>
     </qresource>
 </RCC>

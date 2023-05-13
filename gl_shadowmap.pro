@@ -14,14 +14,16 @@ SOURCES += \
     graphicswidget.cpp \
     main.cpp \
     mainwindow.cpp \
-    planegeometry.cpp
+    planegeometry.cpp \
+    shadowmaptarget.cpp
 
 HEADERS += \
     cubegeometry.h \
     geometry.h \
     graphicswidget.h \
     mainwindow.h \
-    planegeometry.h
+    planegeometry.h \
+    shadowmaptarget.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

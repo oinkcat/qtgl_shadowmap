@@ -23,3 +23,8 @@ QVector3D Geometry::position() const
 {
     return pos;
 }
+
+void Geometry::updateRotation()
+{
+    rotationAngle += 1.0f;
+}

@@ -26,11 +26,16 @@ public:
     void setPosition(QVector3D newPos);
     QVector3D position() const;
 
+    float rotation() const { return rotationAngle; }
+
+    void updateRotation();
+
 protected:
     QOpenGLBuffer attrsBuf;
     QOpenGLBuffer indicesBuf;
 
     QVector3D pos;
+    float rotationAngle;
 };
 
 #endif // GEOMETRY_H

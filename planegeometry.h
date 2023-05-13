@@ -15,6 +15,8 @@ public:
 
 private:
     const float SIZE = 10.0f;
+
+    float rotationAngle;
 };
 
 #endif // PLANEGEOMETRY_H
