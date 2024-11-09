@@ -11,7 +11,6 @@ public:
     // Geometry interface
 public:
     void construct() override;
-    void render(QOpenGLShaderProgram *program) override;
 };
 
 #endif // CUBEGEOMETRY_H

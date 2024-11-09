@@ -21,8 +21,8 @@ public:
     ~Geometry();
 
     virtual void construct() = 0;
-    virtual void render(QOpenGLShaderProgram *program) = 0;
 
+    void render(QOpenGLShaderProgram *program);
     void setPosition(QVector3D newPos);
     QVector3D position() const;
 
@@ -31,6 +31,10 @@ public:
     void updateRotation();
 
 protected:
+    void createBuffers(QVector<VertexData>& vertices, QVector<GLushort>& indices);
+
+    int numIndices;
+
     QOpenGLBuffer attrsBuf;
     QOpenGLBuffer indicesBuf;
 

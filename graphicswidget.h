@@ -28,7 +28,7 @@ protected:
     void timerEvent(QTimerEvent *event) override;
 
 private:
-    const int UPDATE_INTERVAL = 30;
+    const int UPDATE_INTERVAL = 20;
 
     QBasicTimer timer;
 

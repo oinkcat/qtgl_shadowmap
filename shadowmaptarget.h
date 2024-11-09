@@ -34,7 +34,7 @@ private:
     QOpenGLShaderProgram program;
 
     QList<Geometry*> objects;
-    QVector3D lookAtPos;
+    QVector3D eyePos;
 
     QMatrix4x4 orthoMatrix;
     QMatrix4x4 viewMatrix;

@@ -1,6 +1,6 @@
 #include "shadowmaptarget.h"
 
-ShadowMapTarget::ShadowMapTarget() : lookAtPos(0, 0, 0)
+ShadowMapTarget::ShadowMapTarget()
 {
     viewMatrix.setToIdentity();
 
@@ -15,8 +15,7 @@ void ShadowMapTarget::addObject(Geometry *obj)
 
 void ShadowMapTarget::setEyePos(QVector3D pos)
 {
-    viewMatrix.setToIdentity();
-    viewMatrix.lookAt(pos, lookAtPos, QVector3D(0.0f, 1.0f, 0.0f));
+    eyePos = pos;
 }
 
 void ShadowMapTarget::initializeObjects()
@@ -89,12 +88,15 @@ void ShadowMapTarget::render()
     program.bind();
 
     orthoMatrix.setToIdentity();
-    orthoMatrix.ortho(-10.0f, 10.0f, -10.f, 10.f, -20.0f, 20.0f);
+    orthoMatrix.ortho(-10.0f, 10.0f, -10.0f, 10.0f, -20.0f, 20.0f);
 
     for(auto *obj: objects) {
         QMatrix4x4 modelMatrix;
-        modelMatrix.translate(obj->position());
         modelMatrix.rotate(obj->rotation(), 1.0f, 0.75f, 0.5f);
+        modelMatrix.translate(obj->position());
+
+        viewMatrix.setToIdentity();
+        viewMatrix.lookAt(eyePos, obj->position(), QVector3D(0.0f, -1.0f, 0.0f));
 
         QMatrix4x4 mvp = orthoMatrix * viewMatrix * modelMatrix;
 
