@@ -1,3 +1,3 @@
 # OpenGL shadow map test
 
-Basic OpenGL shadow mapping
+Basic OpenGL shadow mapping test
